@@ -2,10 +2,8 @@ from __future__ import annotations
 from typing import Any
 
 import numpy as np
-import oxbow as ox
 import pandas as pd
 import polars as pl
-import pyarrow as pa
 import pysam
 import bioframe
 
@@ -198,7 +196,7 @@ def read_vcf_as_pandas(
         ["chrom", "pos", "id", "ref", "alts", "qual", "filters"]
         + info_fields
         + [f"{sample}.{field}" for sample in samples
-           for field in [f"phased", *sample_fields]]
+           for field in ["phased", *sample_fields]]
     )
     columns = columns + list(set(df.columns) - set(columns))
 
@@ -261,7 +259,7 @@ def read_vcf_as_polars(
         ["chrom", "pos", "id", "ref", "alts", "qual", "filters"]
         + info_fields
         + [f"{sample}.{field}" for sample in samples
-           for field in [f"phased", *sample_fields]]
+           for field in ["phased", *sample_fields]]
     )
     columns = columns + list(set(df.columns) - set(columns))
 
