@@ -1,0 +1,5 @@
+site_name: VCFormer
+repo_url: https://github.com/abdenlab/VCFormer
+site_description: Read and flatten VCF data into DataFrames
+theme:
+  name: material
