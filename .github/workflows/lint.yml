@@ -1,8 +1,17 @@
-name: Ruff
-on: [ push, pull_request ]
+name: Lint
+on:
+  push:
+    branches: main
+  pull_request:
+  workflow_dispatch:
 jobs:
-  ruff:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: chartboost/ruff-action@v1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - run: |
+          pip install --upgrade hatch
+          hatch run lint:style
