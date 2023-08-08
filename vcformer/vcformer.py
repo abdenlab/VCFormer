@@ -195,8 +195,11 @@ def read_vcf_as_pandas(
     columns = (
         ["chrom", "pos", "id", "ref", "alts", "qual", "filters"]
         + info_fields
-        + [f"{sample}.{field}" for sample in samples
-           for field in ["phased", *sample_fields]]
+        + [
+            f"{sample}.{field}"
+            for sample in samples
+            for field in ["phased", *sample_fields]
+        ]
     )
     columns = columns + list(set(df.columns) - set(columns))
 
@@ -258,8 +261,11 @@ def read_vcf_as_polars(
     columns = (
         ["chrom", "pos", "id", "ref", "alts", "qual", "filters"]
         + info_fields
-        + [f"{sample}.{field}" for sample in samples
-           for field in ["phased", *sample_fields]]
+        + [
+            f"{sample}.{field}"
+            for sample in samples
+            for field in ["phased", *sample_fields]
+        ]
     )
     columns = columns + list(set(df.columns) - set(columns))
 
