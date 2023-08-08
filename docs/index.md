@@ -25,3 +25,15 @@ vcf.read_vcf_as_pandas("<PATH TO VCF>")
 # Polars DataFrame
 vcf.read_vcf_as_polars("<PATH TO VCF>")
 ```
+
+### Read Info Schema
+::: vcformer.read_info_schema
+
+### Read Sample Schema
+::: vcformer.read_sample_schema
+
+### Read VCF as Pandas DataFrame
+::: vcformer.read_vcf_as_pandas
+
+### Read VCF as Polars DataFrame
+::: vcformer.read_vcf_as_polars

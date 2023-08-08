@@ -44,6 +44,16 @@ source = "vcs"
 [tool.hatch.build.hooks.vcs]
 version-file = "_version.py"
 
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocstrings[python]",
+]
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build --clean --strict"
+serve = "mkdocs serve --dev-addr localhost:8000"
+
 [tool.hatch.envs.lint]
 detached = true
 dependencies = [
