@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
@@ -37,3 +37,28 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/abdenlab/VCFormer"
 "Bug Tracker" = "https://github.com/abdenlab/VCFormer/issues"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = [
+    "black",
+    "ruff",
+]
+[tool.hatch.envs.lint.scripts]
+style = [
+  "ruff {args:.}",
+  "black --check --diff --color {args:.}",
+]
+fmt = [
+  "black {args:.}",
+  "ruff --fix {args:.}",
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F403", "F405"]
