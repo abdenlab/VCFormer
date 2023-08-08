@@ -48,6 +48,7 @@ version-file = "_version.py"
 dependencies = [
   "mkdocs",
   "mkdocs-material",
+  "mkdocstrings[python]",
 ]
 [tool.hatch.envs.docs.scripts]
 build = "mkdocs build --clean --strict"
