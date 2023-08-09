@@ -88,4 +88,3 @@ dependencies = [
 ]
 [tool.hatch.envs.test.scripts]
 all = "pytest {args:tests}"
-help = "pytest -h"
