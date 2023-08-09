@@ -106,12 +106,15 @@ def read_info_schema(path: str):
     Possible values for `type` are: "Integer", "Float", "String", "Flag".
 
     Possible values for `number` are:
-    - An integer (e.g. 0, 1, 2, 3, 4, etc.) - for fields where the number of
-      values per VCF record is fixed. 0 means the field is a "Flag".
-    - A string ("A", "G", "R") - for fields where the number of values per VCF
+
+    * An integer (e.g. 0, 1, 2, 3, 4, etc.) for fields where the number of values
+      per VCF record is fixed. 0 means the field is a "Flag".
+
+    * A string ("A", "G", "R") - for fields where the number of values per VCF
       record is determined by the number of alts, the total number of alleles,
       or the number of genotypes, respectively.
-    - A dot (".") - for fields where the number of values per VCF record
+
+    * A dot (".") - for fields where the number of values per VCF record
       varies, is unknown, or is unbounded.
     """
     with pysam.VariantFile(path) as f:
@@ -126,7 +129,8 @@ def read_sample_schema(path: str):
 
     Parameters
     ----------
-    f : pysam.VariantFile
+    path : str
+        Path to VCF file.
 
     Returns
     -------
@@ -220,6 +224,7 @@ def read_vcf_as_polars(
 
     Parameters
     ----------
+
     path : str
         Path to VCF file.
     query : str, optional
