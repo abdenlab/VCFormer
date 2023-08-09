@@ -59,7 +59,7 @@ dependencies = [
     "sphinx_copybutton",
 ]
 [tool.hatch.envs.docs.scripts]
-build = "sphinx-build --clean --strict"
+build = "sphinx-build docs docs/_build/html"
 serve = "sphinx-autobuild docs docs/_build/html"
 
 [tool.hatch.envs.lint]
