@@ -136,6 +136,7 @@ select = [
 extend-ignore = [
   "PLR",    # Design related pylint codes
   "E501",   # Line too long
+  "PD901", # Dataframe df
 ]
 target-version = "py37"
 src = ["src"]
