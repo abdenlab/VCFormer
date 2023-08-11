@@ -1,12 +1,12 @@
 from __future__ import annotations
+
 from typing import Any
 
+import bioframe
 import numpy as np
 import pandas as pd
 import polars as pl
 import pysam
-import bioframe
-
 
 # Maps the VCF-derived input types to numpy/pandas dtypes
 TYPE_MAP = {

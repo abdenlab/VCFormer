@@ -5,7 +5,6 @@ from vcformer import (
     read_vcf_as_polars,
 )
 
-
 vcf_path = "tests/fixtures/DRR259113.ref.snpeff.vcf.gz"
 # index file f"{vcf_path}.tbi" is also present, but isn't required by pysam
 
