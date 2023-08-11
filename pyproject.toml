@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "vcformer"
 version = "0.0.1"
 authors = [
-  { name="VCFormer Developers", email="nabdennur@gmail.com" },
+  { name="VCFormer Developers", email="abdenlab@umassmed.edu" },
 ]
 description = "Read and flatten VCF data into DataFrames."
 license = {text = "MIT"}
