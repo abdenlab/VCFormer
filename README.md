@@ -6,17 +6,30 @@ Note: This project builds off our [previous work](https://github.com/NCBI-Codeat
 
 
 ## Installation
-In your preferred Python (virtual) environment, run the following from the root of the cloned project: `pip install -e .`
+In your preferred Python (virtual) environment, run the following from the root of the cloned project:
+```sh
+pip install -e .
+```
+
+You may also install from GitHub:
+```sh
+pip install git+https://github.com/abdenlab/VCFormer.git
+```
+
+We plan to publish to PyPI soon.
 
 
 ## Contribution
 Install dev dependencies:
-`pip install '.[dev]'`
+```sh
+pip install '.[dev]'
+```
 
 Install pre-commit:
-`pip install pre-commit`
-`pre-commit install`
-
+```sh
+pip install pre-commit
+pre-commit install
+```
 
 ## Usage
 ```python
