@@ -33,6 +33,12 @@ dependencies = [
     "polars",
     "pysam",
 ]
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "tox",
+    "pre-commit"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/abdenlab/VCFormer"
