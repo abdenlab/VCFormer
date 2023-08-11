@@ -8,6 +8,7 @@ Note: This project builds off our [previous work](https://github.com/NCBI-Codeat
 ## Installation
 In your preferred Python (virtual) environment, run the following from the root of the cloned project: `pip install -e .`
 
+
 ## Contribution
 Install dev dependencies:
 `pip install '.[dev]'`
@@ -16,19 +17,30 @@ Install pre-commit:
 `pip install pre-commit`
 `pre-commit install`
 
+
 ## Usage
 ```python
 import vcformer as vcf
 
-# Read info schema
-vcf.read_info_schema("<PATH TO VCF>")
+# Read info schema as pandas dataframe
+info_schema = vcf.read_info_schema("<PATH TO VCF>")
 
-# Read sample schema
-vcf.read_sample_schema("<PATH TO VCF>")
+# Read sample schema as pandas dataframe
+sample_schema = vcf.read_sample_schema("<PATH TO VCF>")
 
 # Pandas DataFrame
-vcf.read_vcf_as_pandas("<PATH TO VCF>")
+df = vcf.read_vcf_as_pandas("<PATH TO VCF>", "chr1:10M-20M", info_fields=["AC", "AF"], sample_fields=["GT"], samples=["SRR123456", "SRR98765"])
 
 # Polars DataFrame
-vcf.read_vcf_as_polars("<PATH TO VCF>")
+df = vcf.read_vcf_as_polars("<PATH TO VCF>", ...)
 ```
+
+## Acknowledgements
+
+Special thanks to team members from the NCBI VCF Codeathon:
+
+* Lei Ma @microlei (USDA)
+* Mehmet Kuscuoglu @kscgl (JCVI)
+* David Adeleke (North Dakota State University)
+* Clark Cucinell (University of Virginia)
+* Se-Ran Jun (University of Arkansas for Medical Sciences)
