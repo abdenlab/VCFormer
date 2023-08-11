@@ -51,13 +51,16 @@ version-file = "_version.py"
 
 [tool.hatch.envs.docs]
 dependencies = [
-  "mkdocs",
-  "mkdocs-material",
-  "mkdocstrings[python]",
+    "furo",
+    "myst_parser>=0.13",
+    "sphinx>=4.0",
+    "sphinx-autobuild",
+    "sphinx-book-theme>=0.1.0",
+    "sphinx_copybutton",
 ]
 [tool.hatch.envs.docs.scripts]
-build = "mkdocs build --clean --strict"
-serve = "mkdocs serve --dev-addr localhost:8000"
+build = "sphinx-build --clean --strict"
+serve = "sphinx-autobuild docs docs/_build/html"
 
 [tool.hatch.envs.lint]
 detached = true
