@@ -1,0 +1,4 @@
+[pre-commit-hook]
+command=custom_pylint
+disable=E0401, C0301
+limit=8.0
