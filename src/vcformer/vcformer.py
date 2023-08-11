@@ -276,4 +276,3 @@ def read_vcf_as_polars(
             df = df.with_columns(pl.lit(None).alias(col))
 
     return df.select(columns)
-    # return df[columns].fillna(np.nan)

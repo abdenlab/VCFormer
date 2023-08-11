@@ -36,7 +36,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "pre-commit"
+    "pre-commit",
+    "ruff"
 ]
 
 [project.urls]
