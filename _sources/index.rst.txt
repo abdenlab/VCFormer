@@ -1,9 +1,6 @@
 VCFormer
 ========
 
-Introduction
-------------
-
 VCF data is typically nested and difficult to work with. 
 To facilitate analysis of VCF data, this library reads VCF files into 
 Pandas or Polars DataFrames and extracts nested fields to the top level, 
