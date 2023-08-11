@@ -72,3 +72,19 @@ fmt = [
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["F403", "F405"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+  "--quiet",
+  "-r=a",
+  "--import-mode=importlib",
+]
+testpaths = ["tests"]
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest",
+]
+[tool.hatch.envs.test.scripts]
+all = "pytest {args:tests}"
