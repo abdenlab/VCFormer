@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from vcformer import (
     read_info_schema,
     read_sample_schema,

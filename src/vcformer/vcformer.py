@@ -45,10 +45,7 @@ def _read_vcf_as_records(
     samples: list[str],
     include_unspecified: bool,
 ) -> list[dict[str, Any]]:
-    if query is not None:
-        record_iter = f.fetch(*bioframe.parse_region(query))
-    else:
-        record_iter = f
+    record_iter = f.fetch(*bioframe.parse_region(query)) if query is not None else f
 
     records = []
     for record in record_iter:
