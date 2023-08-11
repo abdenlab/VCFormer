@@ -28,7 +28,8 @@ repos:
 -   repo: https://github.com/pycqa/pylint
     rev: v2.17.5
     hooks:
-    -   id: pylint
-        args:
-        - --max-line-length=120
-        - -d duplicate-code
+        - id: pylint
+          args:
+              - --limit=7
+              - --max-line-length=120
+              - --rcfile=./.pylintrc
