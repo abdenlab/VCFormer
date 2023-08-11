@@ -7,10 +7,6 @@ repos:
     -   id: check-yaml
     -   id: debug-statements
     -   id: name-tests-test
--   repo: https://github.com/PyCQA/flake8
-    rev: 6.1.0
-    hooks:
-    -   id: flake8
 -   repo: https://github.com/PyCQA/isort
     rev: 5.12.0
     hooks:
@@ -25,11 +21,8 @@ repos:
     rev: 23.7.0
     hooks:
         - id: black
--   repo: https://github.com/pycqa/pylint
-    rev: v2.17.5
-    hooks:
-        - id: pylint
-          args:
-              - --fail-under=7
-              - --max-line-length=120
-              - --rcfile=./.pylintrc
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.0.284
+  hooks:
+    - id: ruff
+      args: [ --fix, --exit-non-zero-on-fix ]
